@@ -1,0 +1,18 @@
+.link {
+    color: #fff;
+}
+
+.description {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title {
+    min-height: 50px;
+}
+
+.img {
+    min-height: 180px;
+}
