@@ -1,4 +1,4 @@
-const alphabetInMorse = {
+export const alphabetInMorse = {
     ".-": "A",
     "-...": "B",
     "-.-.": "C",
@@ -36,7 +36,3 @@ const alphabetInMorse = {
     "---..": "8",
     "----.": "9"
 };
-
-module.exports = {
-    alphabetInMorse,
-}

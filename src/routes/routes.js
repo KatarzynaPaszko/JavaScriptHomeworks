@@ -1,4 +1,5 @@
 import MorseCode from "../scenes/MorseCode/MorseCode";
+import { TreasureHunt } from "../scenes/TresureHunt/TreasureHunt";
 
 import { ROUTE_PATHS } from './constants';
 
@@ -47,6 +48,14 @@ export const routes = [
     name: "Multiplication of two matrices together",
     description: "Write a code that multiplies two matrices together. Dimension validation required. ",
     img: "https://s4.dziennik.pl/pliki/11187000/11187627-matrix-900-555.jpg",
+  },
+  {
+    path: ROUTE_PATHS.TreasureHunt,
+    to: ROUTE_PATHS.TreasureHunt,
+    component: TreasureHunt,
+    name: "Treasure Hunt",
+    description: "Treasure Hunt excercise",
+    img: "http://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
   },
 ];
 

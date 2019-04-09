@@ -5,32 +5,34 @@ import { allRoutes } from '../../routes/index';
 import { NavLink } from 'react-router-dom';
 
 class Home extends Component {
-  render() {
-    return (
-        <>
-            <header className="App-header">
-                <h1>JavaScript Homeworks</h1>
-            </header>
-            <Row>
-                {allRoutes.map(({ name, img, description, ...props }) => (
-                    <Col>
+    render() {
+        return (
+            <>
+                <header className="App-header">
+                    <h1>JavaScript Homeworks</h1>
+                </header>
+                <Row>
+                    {allRoutes.map(({ name, img, description, ...props }) => (
+
                         <NavLink
                             exact={true}
                             key={name}
                             {...props}
                         >
-                            <Tile
-                                name={name}
-                                img={img}
-                                description={description}
-                            />
+                            <Col>
+                                <Tile
+                                    name={name}
+                                    img={img}
+                                    description={description}
+                                />
+                            </Col>
                         </NavLink>
-                    </Col>
-                ))}
-            </Row>
-        </>
-    );
-  }
+
+                    ))}
+                </Row>
+            </>
+        );
+    }
 }
 
 export default Home;

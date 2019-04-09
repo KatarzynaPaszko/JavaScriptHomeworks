@@ -10,17 +10,17 @@ class App extends Component {
     return (
       <Container>
         <Router>
-        <div>
-          {/* <Menu /> */}
-          <Switch>
-            <Route exact path="/" component={Home} />
-            {allRoutes.map( (route, i) => <Route key={i} {...route} />)}
-            {/* <Route component={ErrorPage} /> */}
-            <Route render={() => <h1>Page not found :(</h1>} />
-          </Switch>
-          {/* <Footer /> */}
-        </div>
-      </Router>
+          <div>
+            {/* <Menu /> */}
+            <Switch>
+              <Route exact path="/" component={Home} />
+              {allRoutes.map((route, i) => <Route key={i} {...route} />)}
+              {/* <Route component={ErrorPage} /> */}
+              <Route render={() => <h1>Page not found :(</h1>} />
+            </Switch>
+            {/* <Footer /> */}
+          </div>
+        </Router>
       </Container>
     );
   }
