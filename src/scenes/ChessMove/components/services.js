@@ -1,5 +1,5 @@
 // import React from 'react';
-import { treasureMap } from './treasureMap';
+import { treasureMap } from './chessBoard';
 
 class MapServices {
     static privateFunction() {
