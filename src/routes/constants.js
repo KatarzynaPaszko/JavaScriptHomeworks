@@ -6,4 +6,5 @@ export const ROUTE_PATHS = {
   TurnOneStringIntoTheOther: '/TurnOneStringIntoTheOther',
   MultiplicationOfTwoMatrices: '/MultiplicationOfTwoMatrices',
   TreasureHunt: '/TreasureHunt',
+  ChessMove: './ChessMove',
 };

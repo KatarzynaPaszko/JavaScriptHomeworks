@@ -1,5 +1,6 @@
 import MorseCode from "../scenes/MorseCode/MorseCode";
 import { TreasureHunt } from "../scenes/TresureHunt/TreasureHunt";
+import { ChessMove } from "../scenes/ChessMove/ChessMove";
 
 import { ROUTE_PATHS } from './constants';
 
@@ -56,6 +57,14 @@ export const routes = [
     name: "Treasure Hunt",
     description: "Treasure Hunt excercise",
     img: "http://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
+  },
+  {
+    path: ROUTE_PATHS.ChessMove,
+    to: ROUTE_PATHS.ChessMove,
+    component: ChessMove,
+    name: "Chess Move",
+    description: "Chess Move excercise",
+    img: "https://s.hswstatic.com/gif/computer-defeat-chess-champion-109349476.jpg",
   },
 ];
 
