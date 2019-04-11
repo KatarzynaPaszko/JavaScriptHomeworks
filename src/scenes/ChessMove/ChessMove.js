@@ -1,41 +1,25 @@
 import React, { Component } from 'react';
-// import { Row, Button, Col } from 'react-bootstrap';
-// import { treasureMap } from './components/treasureMap';
-// import styles from './ChessMove.module.css';
+import { chessBoard } from './components/chessBoard';
+import styles from './ChessMove.module.css';
+import classNames from "classnames";
 
 export class ChessMove extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         correctValues: [],
-    //     }
-    // }
+    renderChessBoard = () => {
+        const board = chessBoard.map((element) => {
+            var squareClasses = classNames(styles.square, {
+                [styles.square__black]: ((element.row % 2 === 0) && (element.col % 2 === 0)) || (element.row % 2 !== 0) && (element.col % 2 !== 0)
+            })
+            return <div
+                className={squareClasses}
+                key={element.row + '' + element.col}
+            >a</div>
+        })
+        console.log(chessBoard);
+        return board;
 
-    // findSolution = () => {
-    //     let result = [];
-    //     treasureMap.forEach(element => {
-    //         let add = element.row.toString() + element.col.toString();
-    //         if (Number(add) === element.num) {
-    //             result.push(element);
-    //         }
-    //     });
-    //     this.setState({ correctValues: result });
-    //     return result;
-    // }
+    }
 
     render() {
-        // const treasureMapRendered = treasureMap.map(element => {
-        //     return (
-        //         <div
-        //             key={element.row + '' + element.col}
-        //             className={styles.treasureHunt__square}
-        //         >
-        //             <span className={this.state.correctValues.includes(element) ? styles.treasureHunt__solution : null}>
-        //                 {element.num}
-        //             </span>
-        //         </div>
-        //     )
-        // })
         return (
             <>
                 <header>
@@ -43,15 +27,10 @@ export class ChessMove extends Component {
                     {/* <Button>Menu</Button> */}
                 </header>
                 <br />
-                {/* <Row>
-                    <Col>
-                        <div className={styles.treasureHunt__box}>
-                            {treasureMapRendered}
-                        </div>
-                        <br />
-                        <Button onClick={this.findSolution} >See soluion</Button>
-                    </Col>
-                </Row> */}
+                <div className={[styles.chessMove__board]}>
+                    {this.renderChessBoard()}
+                </div>
+                <p>bla</p>
             </>
         );
     }

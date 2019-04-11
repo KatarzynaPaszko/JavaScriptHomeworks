@@ -59,7 +59,7 @@ export const routes = [
     img: "http://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
   },
   {
-    path: ROUTE_PATHS.ChessMove,
+    // path: ROUTE_PATHS.ChessMove,
     to: ROUTE_PATHS.ChessMove,
     component: ChessMove,
     name: "Chess Move",
