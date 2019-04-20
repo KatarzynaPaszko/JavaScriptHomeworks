@@ -30,7 +30,9 @@ export class TreasureHunt extends Component {
                     key={element.row + '' + element.col}
                     className={styles.treasureHunt__square}
                 >
-                    <span className={this.state.correctValues.includes(element) ? styles.treasureHunt__solution : null}>
+                    <span className={this.state.correctValues.includes(element)
+                        ? styles.treasureHunt__solution
+                        : null}>
                         {element.num}
                     </span>
                 </div>
