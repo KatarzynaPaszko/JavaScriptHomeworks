@@ -1,0 +1,1 @@
+export const ADD_PAWS = '[chessMove]ADD_PAWS'
