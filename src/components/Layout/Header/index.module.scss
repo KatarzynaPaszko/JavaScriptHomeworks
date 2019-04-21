@@ -1,0 +1,10 @@
+@import 'src/style/utils';
+
+.header {
+    background-color: $darkGrey;
+    color: $lightGrey;
+
+    &__title {
+        padding: 25px 0;
+    }
+}

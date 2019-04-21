@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { allRoutes } from '../../routes';
 import Header from './Header';
 import Footer from './Footer';
 import styles from './index.module.scss';
@@ -8,7 +10,7 @@ interface ILayoutProps {
     readonly children: React.ReactNode;
 }
 
-class Layout extends React.Component<ILayoutProps> {
+class Layout extends React.Component<ILayoutProps & RouteComponentProps<{}>> {
     public state = {
         pageTitle: null,
     }
@@ -17,7 +19,13 @@ class Layout extends React.Component<ILayoutProps> {
         this.setPageTitle();
     }
 
-    public render() {
+    public componentDidUpdate(prevProps: ILayoutProps & RouteComponentProps<{}>) {
+        if(this.props.location.pathname !== prevProps.location.pathname) {
+            this.setPageTitle();
+        }
+    }
+
+    public render() {       
         return (
             <div className={styles.layout}>
                 <Header 
@@ -35,9 +43,20 @@ class Layout extends React.Component<ILayoutProps> {
     }
 
     private setPageTitle = () => {
-
+        let pageTitle = this.getPageTitle(this.props.location.pathname);
+        if(!pageTitle) {
+            pageTitle = 'Tytul strony lalala'
+        }
+        this.setState({pageTitle});
+        document.title = pageTitle;
     }
-    
+
+    private getPageTitle(pathname: string) {
+        const pathRoute = allRoutes.find(item => {         
+            return item.path === pathname;
+        })        
+        return pathRoute && pathRoute.path ? pathRoute.name : 'JavaScript Homeworks';
+    }
 };
 
-export default Layout;
+export default withRouter(Layout);

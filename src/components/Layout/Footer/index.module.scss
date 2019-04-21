@@ -1,6 +1,8 @@
+@import 'src/style/utils';
+
 .footer {
-    color: #99979c;
-    background-color: #2a2730;
+    color: $lightGrey;
+    background-color: $darkGrey;
     padding-top: 30px;
 
     &__icon {

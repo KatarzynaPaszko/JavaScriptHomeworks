@@ -4,10 +4,13 @@ import './App.css';
 import Home from "./scenes/Home/Home";
 import Layout from './components/Layout/index';
 import { allRoutes } from './routes';
+// import { Provider } from 'react-redux';
+// import { store } from './store/store';
 
 class App extends Component {
   render() {
     return (
+      // <Provider store={store}>
       <BrowserRouter>
         <Layout>
           <Switch>
@@ -18,6 +21,8 @@ class App extends Component {
           </Switch>
         </Layout>
       </BrowserRouter>
+      // </Provider>
+
     );
   }
 }

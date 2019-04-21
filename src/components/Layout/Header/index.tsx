@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from "classnames";
 import styles from './index.module.scss';
-import Hamburger from './Hamburger.tsx'
-import MainNavigation from './MainNavigation.tsx'
+// import Hamburger from './Hamburger.tsx'
+// import MainNavigation from './MainNavigation.tsx'
 import { Container } from 'react-bootstrap';
 
 interface IHeaderProps extends IClassNameProp {
@@ -17,17 +17,17 @@ const Header: React.StatelessComponent<IHeaderProps> = ({
     title, 
     className
 }) => {
-    const headerClassNames = classNames(styles.header__container, className)
+    const headerClassNames = classNames(styles.header, className)
     return (
         <header className={headerClassNames}>
             <Container>
-                <h1>{title}</h1>
-                <Hamburger 
+                <h1 className={styles.header__title}>{title}</h1>
+                {/* <Hamburger 
                     // className={styles.header__hamburger}
                     // onClick={toggleMainNavigation}
                     // showClose={mainNavigationOpened}
                 />
-                <MainNavigation />
+                <MainNavigation /> */}
             </Container>
             
         </header>
